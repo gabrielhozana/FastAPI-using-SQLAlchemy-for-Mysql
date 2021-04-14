@@ -7,3 +7,5 @@
     ├── main.py
     ├── models.py
     └── schemas.py
+
+Run Script : uvicorn sql_app.main:app --reload
