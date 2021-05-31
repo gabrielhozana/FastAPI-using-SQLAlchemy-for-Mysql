@@ -3,13 +3,13 @@ from pydantic import BaseModel
 
 class ItemBase(BaseModel):
 
-    status_pengiriman: str
+    status_pengiriman: str = "Belum Dikirim"
 
-    barang_diterima: Optional[str] = None
+    barang_diterima: Optional[str] = "Belum Diterima"
 
 class ItemCreate(ItemBase):
 
-    pass
+    id_pembayaran: int
 
 class Item(ItemBase):
     id_transaksi: int

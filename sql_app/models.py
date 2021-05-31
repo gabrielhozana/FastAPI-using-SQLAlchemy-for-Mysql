@@ -26,5 +26,6 @@ class Item(Base):
     status_pengiriman = Column(String, index=True)
     barang_diterima = Column(String, index=True)
     id_pelanggan = Column(Integer, ForeignKey("pelanggan.id_pelanggan"))
-
+    id_pembayaran = Column(Integer)
+    
     owner = relationship("User", back_populates="items")

@@ -21,6 +21,9 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
+async def read_main():
+    return {"msg": "Welcome"}
 
 @app.post("/users/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
